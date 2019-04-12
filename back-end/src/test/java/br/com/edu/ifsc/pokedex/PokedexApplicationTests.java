@@ -1,4 +1,4 @@
-package com.br.edu.ifsc.pokedex;
+package br.com.edu.ifsc.pokedex;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.br.edu.ifsc.pokedex;
+package br.com.edu.ifsc.pokedex;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
