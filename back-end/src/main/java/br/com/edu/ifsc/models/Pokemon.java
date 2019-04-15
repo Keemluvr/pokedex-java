@@ -2,6 +2,7 @@ package br.com.edu.ifsc.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,13 +21,18 @@ public class Pokemon implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
 	private long id;
 	
+	@Column
 	private String name;
 	
+	@Column
 	private double weight;
 	
+	@Column
 	private double height;
 	
+	@Column
 	private String description;
+	
 	
 	public long getId() {
 		return id;
