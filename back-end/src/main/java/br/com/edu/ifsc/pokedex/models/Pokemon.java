@@ -1,4 +1,4 @@
-package br.com.edu.ifsc.models;
+package br.com.edu.ifsc.pokedex.models;
 
 import java.io.Serializable;
 
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="TB_POKEMON")
+@Table(name="tb_pokemon")
 public class Pokemon implements Serializable{
 
 	//Para manter a compatibilidade com as versões dessa classe 
