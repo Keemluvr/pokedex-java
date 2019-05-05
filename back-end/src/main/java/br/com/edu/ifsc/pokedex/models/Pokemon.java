@@ -7,14 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
+
 @Entity
-@Table(name="tb_pokemon")
+@Table(name="pokemon")
 public class Pokemon implements Serializable{
 
-	//Para manter a compatibilidade com as versões dessa classe 
+	// Para manter a compatibilidade com as versões dessa classe 
 	private static final long serialVersionUID = 1L; 
 	
 	@Id
@@ -33,13 +35,16 @@ public class Pokemon implements Serializable{
 	@Column
 	private String description;
 	
+	/** Cria uma tabela chamada egg_pokemon onde há um ovo para muitos pokemons
+	 */
+	@ManyToOne
+	private Egg egg = new Egg();
+	
+	
+	// Getters and Setters
 	
 	public long getId() {
 		return id;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
 	}
 	
 	public String getName() {
@@ -73,6 +78,13 @@ public class Pokemon implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+	public Egg getEgg() {
+		return egg;
+	}
+
+	public void setEgg(Egg egg) {
+		this.egg = egg;
+	}
 	
 }

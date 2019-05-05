@@ -21,9 +21,9 @@ import br.com.edu.ifsc.pokedex.repository.PokemonRepository;
  * @Author	Cesar Henrique
  */
 
-@RestController
-@RequestMapping(value="/api") //URI padrão para a API  
-public class PokemonController {
+	@RestController
+	@RequestMapping(value="/api") //URI padrão para a API  
+	public class PokemonController {
 
 	/* Ponto de injeção
 	 * Para poder utilizar aos métodos para se conectar 
