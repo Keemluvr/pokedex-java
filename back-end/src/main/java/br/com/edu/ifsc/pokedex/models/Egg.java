@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="egg")
@@ -33,9 +37,10 @@ public class Egg implements Serializable{
 	/** Cria uma tabela chamada egg_pokemon onde há uma lista de pokemons para 
 	 *  um ovo
 	 */
-	@ManyToMany // Não é o lado dominante da relação
+	@ManyToMany(fetch = FetchType.LAZY) // Não é o lado dominante da relação
 	@JoinTable(name = "pokemon_egg")
 	@JoinColumn(name = "egg_id")
+	@JsonBackReference
 	private List<Pokemon> pokemon;
 
 	
