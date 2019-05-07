@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,13 +24,18 @@ public class Egg implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
 	private long id;
 	
-	@Column
+	
+	/** Nome do ovo
+	 * */
+	@Column(nullable = false)
 	private String name;
 	
 	/** Cria uma tabela chamada egg_pokemon onde há uma lista de pokemons para 
-	 * um ovo
+	 *  um ovo
 	 */
-	@OneToMany
+	@ManyToMany // Não é o lado dominante da relação
+	@JoinTable(name = "pokemon_egg")
+	@JoinColumn(name = "egg_id")
 	private List<Pokemon> pokemon;
 
 	

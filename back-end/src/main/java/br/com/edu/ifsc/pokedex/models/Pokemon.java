@@ -1,13 +1,17 @@
 package br.com.edu.ifsc.pokedex.models;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
@@ -35,10 +39,12 @@ public class Pokemon implements Serializable{
 	@Column
 	private String description;
 	
-	/** Cria uma tabela chamada egg_pokemon onde há um ovo para muitos pokemons
+	/** Cada Pokémon é atribuído a um ou mais grupos de ovos.
 	 */
-	@ManyToOne
-	private Egg egg = new Egg();
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "pokemon_egg")
+	@JoinColumn(name = "pokemon_id")
+	private List<Egg> egg;
 	
 	
 	// Getters and Setters
@@ -79,11 +85,11 @@ public class Pokemon implements Serializable{
 		this.description = description;
 	}
 
-	public Egg getEgg() {
+	public List<Egg> getEgg() {
 		return egg;
 	}
 
-	public void setEgg(Egg egg) {
+	public void setEgg(List<Egg> egg) {
 		this.egg = egg;
 	}
 	
