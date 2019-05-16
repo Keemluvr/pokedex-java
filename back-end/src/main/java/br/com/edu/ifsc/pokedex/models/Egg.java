@@ -40,7 +40,7 @@ public class Egg implements Serializable{
 	@ManyToMany(fetch = FetchType.LAZY) // Não é o lado dominante da relação
 	@JoinTable(name = "pokemon_egg")
 	@JoinColumn(name = "egg_id")
-	@JsonBackReference
+	@JsonBackReference //Resolve o problema que retorna a lista de ovos infinitamente
 	private List<Pokemon> pokemon;
 
 	
