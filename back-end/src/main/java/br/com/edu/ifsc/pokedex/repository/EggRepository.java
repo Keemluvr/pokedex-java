@@ -6,7 +6,12 @@ import br.com.edu.ifsc.pokedex.models.Egg;
 
 //JpaRepository possui métodos prontos para se fazer persistência no banco de dados,
 //então métodos como save, delete, findAll e entre outros. Então é só criar uma instância
-//dessa interface (PokemonRepository) e utilizar esses métodos no módulo Pokemon.
+//dessa interface (EggRepository) e utilizar esses métodos no módulo EggController.
+
+/**
+ * @see JpaRepository
+ * @see Egg
+ */
 
 public interface EggRepository extends JpaRepository<Egg, Long>{
 	

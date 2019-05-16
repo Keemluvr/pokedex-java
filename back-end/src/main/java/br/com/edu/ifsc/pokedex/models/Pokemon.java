@@ -15,10 +15,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-
+/** Classe que vai modelar o pokemon
+ * 
+ * @see Egg
+ * 
+ * @Author	Keila Fernandes
+ * @Author	Cesar Henrique
+ */
 
 @Entity
 @Table(name="pokemon")

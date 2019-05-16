@@ -2,19 +2,19 @@ package br.com.edu.ifsc.pokedex.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.edu.ifsc.pokedex.models.Pokemon;
+import br.com.edu.ifsc.pokedex.models.Nature;
 
 //JpaRepository possui métodos prontos para se fazer persistência no banco de dados,
 //então métodos como save, delete, findAll e entre outros. Então é só criar uma instância
-//dessa interface (PokemonRepository) e utilizar esses métodos no módulo Pokemon.
+//dessa interface (NatureRepository) e utilizar esses métodos no módulo NatureController.
 
 /**
  * @see JpaRepository
- * @see Pokemon
+ * @see Nature
  */
 
-public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
-
-	/* Método que procura um único pokemon pelo seu id. */
-	Pokemon findById(long id);
+public interface NatureRepository extends JpaRepository<Nature, Long>{
+	
+	/* Método que procura uma única Nature pelo seu id. */
+	Nature findById(long id);
 }

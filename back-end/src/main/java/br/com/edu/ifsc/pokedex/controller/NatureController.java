@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.edu.ifsc.pokedex.models.Egg;
-import br.com.edu.ifsc.pokedex.repository.EggRepository;
+import br.com.edu.ifsc.pokedex.models.Nature;
+import br.com.edu.ifsc.pokedex.repository.NatureRepository;
 
 /** Classe que vai receber as requisições http
  * 
@@ -23,61 +23,57 @@ import br.com.edu.ifsc.pokedex.repository.EggRepository;
 
 @RestController
 @RequestMapping(value="/api") //URI padrão para a API  
-public class EggController {
+public class NatureController {
 	
 	/** Ponto de injeção
 	 * Para poder utilizar aos métodos para se conectar 
 	 * ao banco de dados.
 	 */
 	@Autowired
-	EggRepository eggRepository;
+	NatureRepository natureRepository;
 	
 	
-	/** Lista todos os ovos salvos no banco de dados
+	/** Lista todos as naturezas salvas no banco de dados
 	 * em formato JSON.
 	 */
-	@GetMapping("/egg")
-	public List<Egg> listEggs() {
-		return eggRepository.findAll();
+	@GetMapping("/nature")
+	public List<Nature> listNatures() {
+		return natureRepository.findAll();
 	}
 	
-	
-	/** Lista o ovo específico pelo id que está salvo 
+	/** Lista a natureza específicada pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
-	@GetMapping("/egg/{id}")
-	public Egg listEgg(@PathVariable(value="id") long id) {
-		return eggRepository.findById(id);
+	@GetMapping("/nature/{id}")
+	public Nature listNature(@PathVariable(value="id") long id) {
+		return natureRepository.findById(id);
 	}
 	
-	
-	/** Vai receber através do corpo da requisição o ovo
+	/** Vai receber através do corpo da requisição a natureza
 	 * e vai ser salvo no banco de dados.
 	 */
-	@PostMapping("/egg")
-	public Egg saveEgg(@RequestBody Egg egg) {
-		return eggRepository.save(egg);
+	@PostMapping("/nature")
+	public Nature saveNature(@RequestBody Nature nature) {
+		return natureRepository.save(nature);
 	}
 	
 	
-	/** Irá deletar um ovo em uma determinada posição
+	/** Irá deletar uma natureza em uma determinada posição
 	 * conhecida como id.
 	 * Irá receber como parâmetro o id a ser deletado
 	 * em formato JSON, no corpo da requisição.
 	 */
-	@DeleteMapping("/egg")
-	public void deleteEgg(@RequestBody Egg egg) {
-		eggRepository.delete(egg);
+	@DeleteMapping("/nature")
+	public void deleteNature(@RequestBody Nature nature) {
+		natureRepository.delete(nature);
 	}
 	
 	
-	/** Irá atualizar as informações de um ovo através das
+	/** Irá atualizar as informações de uma nature através das
 	 * informações recebidas do RequestBody em formato JSON.
 	 */
-	@PutMapping("/egg")
-	public Egg updateEgg(@RequestBody Egg egg) {
-		return eggRepository.save(egg);
+	@PutMapping("/nature")
+	public Nature updateNature(@RequestBody Nature nature) {
+		return natureRepository.save(nature);
 	}
-	
-
 }
