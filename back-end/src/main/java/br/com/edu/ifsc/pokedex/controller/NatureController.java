@@ -63,9 +63,9 @@ public class NatureController {
 	 * Irá receber como parâmetro o id a ser deletado
 	 * em formato JSON, no corpo da requisição.
 	 */
-	@DeleteMapping("/nature")
-	public void deleteNature(@RequestBody Nature nature) {
-		natureRepository.delete(nature);
+	@DeleteMapping("/nature/{id}")
+	public void deleteNature(@PathVariable(value="id") long id) {
+		natureRepository.deleteById(id);
 	}
 	
 	

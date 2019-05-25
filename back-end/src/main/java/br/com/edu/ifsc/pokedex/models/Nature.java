@@ -27,6 +27,8 @@ public class Nature implements Serializable {
 	 */
 	@Column(nullable = false)
 	private String name;
+	
+	
 
 	public long getId() {
 		return id;
@@ -43,7 +45,5 @@ public class Nature implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 
 }

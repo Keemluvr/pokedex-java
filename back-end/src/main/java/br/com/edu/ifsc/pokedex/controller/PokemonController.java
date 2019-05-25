@@ -64,9 +64,9 @@ public class PokemonController {
 	 * receber como parâmetro o pokemon a ser deletado em formato JSON, no corpo da
 	 * requisição.
 	 */
-	@DeleteMapping("/pokemon")
-	public void deletePokemon(@RequestBody Pokemon pokemon) {
-		pokemonRepository.delete(pokemon);
+	@DeleteMapping("/pokemon/{id}")
+	public void deletePokemon(@PathVariable(value = "id") long id) {
+		pokemonRepository.deleteById(id);
 	}
 
 	/**

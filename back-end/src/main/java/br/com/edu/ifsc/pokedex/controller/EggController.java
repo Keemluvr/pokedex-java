@@ -65,9 +65,9 @@ public class EggController {
 	 * Irá receber como parâmetro o id a ser deletado
 	 * em formato JSON, no corpo da requisição.
 	 */
-	@DeleteMapping("/egg")
-	public void deleteEgg(@RequestBody Egg egg) {
-		eggRepository.delete(egg);
+	@DeleteMapping("/egg/{id}")
+	public void deleteEgg(@PathVariable(value="id") long id) {
+		eggRepository.deleteById(id);
 	}
 	
 	
