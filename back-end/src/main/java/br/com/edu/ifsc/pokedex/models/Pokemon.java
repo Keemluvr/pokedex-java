@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="pokemon")
-public class Pokemon implements Serializable{
+public class Pokemon extends Nature implements Serializable{
 
 	// Para manter a compatibilidade com as versões dessa classe 
 	private static final long serialVersionUID = 1L; 
@@ -65,7 +65,37 @@ public class Pokemon implements Serializable{
 	private List<Egg> egg;
 	
 	
+	// Métodos
+	
+	/**
+	 * O método increase tem como objetivo aumentar alguma característica
+	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
+	 * velocidade de defesa e velocidade do Pokemon.
+	 * 
+	 * @param
+	 */
+	@Override
+	public void increase(Stat stat) {
+		// TODO Auto-generated method stub
+		super.increase(stat);
+	}
+	
+	/**
+	 * O método decrease tem como objetivo diminuir alguma característica
+	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
+	 * velocidade de defesa e velocidade do Pokemon.
+	 * 
+	 * @param
+	 */
+	@Override
+	public void decrease(Stat stat) {
+		// TODO Auto-generated method stub
+		super.decrease(stat);
+	}
+	
+	
 	// Getters and Setters
+	
 	
 	/** Retorna o valor do id do Pokemon
 	 */
