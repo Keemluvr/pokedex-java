@@ -17,54 +17,51 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table(name="egg")
-public class Egg implements Serializable{
+@Table(name="item")
+public class Item implements Serializable{
 
 	// Para manter a compatibilidade com as versões dessa classe 
-	private static final long serialVersionUID = 1L; 
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
 	private long id;
 	
 	
-	/** Nome do ovo
+	/** Nome do item
 	 */
 	@Column(nullable = false)
-	private String name;
-	
-	/** Cria uma tabela chamada egg_pokemon onde há uma lista de pokemons para 
-	 *  um ovo
-	 */
-	@ManyToMany(fetch = FetchType.LAZY) // Não é o lado dominante da relação
-	@JoinTable(name = "pokemon_egg")
-	@JoinColumn(name = "egg_id")
-	@JsonBackReference //Resolve o problema que retorna a lista de ovos infinitamente
-	private List<Pokemon> pokemon;
+	private String item;
 
+//	/** Cria uma tabela chamada item_evolution onde há uma lista de itens para 
+//	 *  uma evolução
+//	 */
+//	@ManyToMany(fetch = FetchType.LAZY) // Não é o lado dominante da relação
+//	@JoinTable(name = "pokemon_egg")
+//	@JoinColumn(name = "egg_id")
+//	@JsonBackReference //Resolve o problema que retorna a lista de itens infinitamente
+//	private List<Pokemon> pokemon;
+	
 	
 	// Getters and Setters
-	
+
 	public long getId() {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+	public String getItem() {
+		return item;
 	}
 
-	public List<Pokemon> getPokemon() {
-		return pokemon;
-	}
 
-	public void setPokemon(List<Pokemon> pokemon) {
-		this.pokemon = pokemon;
+	public void setItem(String item) {
+		this.item = item;
 	}
-	
-	
 	
 }

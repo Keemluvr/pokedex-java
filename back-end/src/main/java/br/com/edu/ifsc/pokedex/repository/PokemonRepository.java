@@ -15,6 +15,7 @@ import br.com.edu.ifsc.pokedex.models.Pokemon;
 
 public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
 
-	/* Método que procura um único pokemon pelo seu id. */
+	/** Método que procura um único pokemon pelo seu id. */
 	Pokemon findById(long id);
+	
 }
