@@ -18,4 +18,6 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
 	/** Método que procura um único pokemon pelo seu id. */
 	Pokemon findById(long id);
 	
+	/** Método que procura um único pokemon pelo seu nome. */
+	Pokemon findByName(String name);
 }

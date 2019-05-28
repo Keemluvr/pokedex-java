@@ -49,6 +49,15 @@ public class PokemonController {
 	public Pokemon listPokemon(@PathVariable(value = "id") long id) {
 		return pokemonRepository.findById(id);
 	}
+	
+	/**
+	 * Lista o pokemon específico pelo nome que está salvo no banco de dados, em
+	 * formato JSON,.
+	 */
+	@GetMapping("/pokemon/{name}")
+	public Pokemon listPokemonName(@PathVariable(value = "id") String name) {
+		return pokemonRepository.findByName(name);
+	}
 
 	/**
 	 * Vai receber através do corpo da requisição o pokemon e vai ser salvo no banco
