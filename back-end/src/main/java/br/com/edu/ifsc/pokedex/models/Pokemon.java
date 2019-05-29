@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,21 +21,18 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 /** Classe que vai modelar o pokemon
  * 
  * @see Egg
+ * @see Stat
  * 
  * @Author	Keila Fernandes
  * @Author	Cesar Henrique
  */
-
 @Entity
 @Table(name="pokemon")
-public class Pokemon extends Nature implements Serializable{
+public class Pokemon extends Stat implements Serializable{
 
 	// Para manter a compatibilidade com as versões dessa classe 
 	private static final long serialVersionUID = 1L; 
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
-	private long id;
 	
 	/** Variável que irá guardar o nome do pokemon
 	 */
@@ -65,43 +63,7 @@ public class Pokemon extends Nature implements Serializable{
 	private List<Egg> egg;
 	
 	
-	// Métodos
-	
-	/**
-	 * O método increase tem como objetivo aumentar alguma característica
-	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
-	 * velocidade de defesa e velocidade do Pokemon.
-	 * 
-	 * @param
-	 */
-	@Override
-	public void increase(Stat stat) {
-		// TODO Auto-generated method stub
-		super.increase(stat);
-	}
-	
-	/**
-	 * O método decrease tem como objetivo diminuir alguma característica
-	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
-	 * velocidade de defesa e velocidade do Pokemon.
-	 * 
-	 * @param
-	 */
-	@Override
-	public void decrease(Stat stat) {
-		// TODO Auto-generated method stub
-		super.decrease(stat);
-	}
-	
-	
 	// Getters and Setters
-	
-	
-	/** Retorna o valor do id do Pokemon
-	 */
-	public long getId() {
-		return id;
-	}
 	
 	/** Retorna o valor do nome do Pokemon
 	 */

@@ -45,8 +45,8 @@ public class PokemonController {
 	 * Lista o pokemon específico pelo id que está salvo no banco de dados, em
 	 * formato JSON,.
 	 */
-	@GetMapping("/pokemon/{id}")
-	public Pokemon listPokemon(@PathVariable(value = "id") long id) {
+	@GetMapping("/pokemon/{id:[0-9]+}")
+	public Pokemon listPokemonId(@PathVariable(value = "id") long id) {
 		return pokemonRepository.findById(id);
 	}
 	
@@ -54,8 +54,8 @@ public class PokemonController {
 	 * Lista o pokemon específico pelo nome que está salvo no banco de dados, em
 	 * formato JSON,.
 	 */
-	@GetMapping("/pokemon/{name}")
-	public Pokemon listPokemonName(@PathVariable(value = "id") String name) {
+	@GetMapping("/pokemon/{name:[a-zA-Z]+}")
+	public Pokemon listPokemonName(@PathVariable(value = "name") String name) {
 		return pokemonRepository.findByName(name);
 	}
 

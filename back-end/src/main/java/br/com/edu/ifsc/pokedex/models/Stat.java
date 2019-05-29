@@ -3,61 +3,70 @@ package br.com.edu.ifsc.pokedex.models;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.MappedSuperclass;
 
-/** Classe que 
+/**
+ * Classe que avi modelar o stats do Pokemon
  * 
+ * @see Pokemon
+ * @see Serializable
  * 
- * @Author	Keila Fernandes
+ * @Author Keila Fernandes
  */
+@MappedSuperclass //Define uma super classe mapeada. A super classe mapeada não é uma classe de persistência, porém permite o mapeamento de atributos comuns para subclasses
+public class Stat implements Serializable {
 
-@Entity
-@Table(name="stat")
-public class Stat implements Serializable{
-
-	// Para manter a compatibilidade com as versões dessa classe 
+	// Para manter a compatibilidade com as versões dessa classe
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Cria automaticamente o id
+	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
 	private long id;
 	
+	
 	/**
-	 *  Poder de ataque do pokemon
+	 * Poder de ataque do pokemon
 	 */
 	@Column(nullable = false)
 	private int attack;
-	
+
 	/**
-	 *  Poder de defesa do pokemon
+	 * Poder de defesa do pokemon
 	 */
 	@Column(nullable = false)
 	private int defense;
-	
+
 	/**
-	 *  Ataque especial do pokemon
+	 * Ataque especial do pokemon
 	 */
 	@Column(nullable = false)
 	private int specialAttack;
-	
+
 	/**
-	 *  Ataque de defesa do pokemon
+	 * Ataque de defesa do pokemon
 	 */
 	@Column(nullable = false)
 	private int specialDefense;
-	
+
 	/**
-	 *  Velocidade do pokemon
+	 * Velocidade do pokemon
 	 */
 	@Column(nullable = false)
 	private int speed;
 
-	
+
 	// Getters and Setters
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	public int getAttack() {
 		return attack;
@@ -98,7 +107,5 @@ public class Stat implements Serializable{
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	
-	
-	
+
 }

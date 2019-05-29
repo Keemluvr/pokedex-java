@@ -74,7 +74,7 @@ public class ItemController {
 	/** Irá atualizar as informações de um ovo através das
 	 * informações recebidas do RequestBody em formato JSON.
 	 */
-	@PutMapping("/egg")
+	@PutMapping("/item")
 	public Item updateItem(@RequestBody Item item) {
 		return itemRepository.save(item);
 	}
