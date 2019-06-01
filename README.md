@@ -7,9 +7,13 @@
 [Arquivo](https://docs.google.com/document/d/1_JEKNq-yKCWEPQsp10XgAg7EgRsrQ_uxTk6--QBi034/edit?usp=sharing)
 
 ## Tecnologias usadas
+>Back-end
 >- Spring
 >   - Spring Boot
 >- PostgreSQL
+
+>Front-end
+>- Materialize
 
 ## Endpoints
 >- Pokemon
