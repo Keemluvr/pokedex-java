@@ -14,6 +14,9 @@ import br.com.edu.ifsc.pokedex.models.Item;
 */
 public interface ItemRepository extends JpaRepository<Item, Long>{
 
-	/* Método que procura um único ovo pelo seu id. */
+	/* Método que procura um único item pelo seu id. */
 	Item findById(long id);
+
+	/** Método que procura um único item pelo seu nome. */
+	Item findByName(String name);
 }

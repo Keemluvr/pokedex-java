@@ -25,7 +25,7 @@ public class Item implements Serializable{
 	/** Nome do item
 	 */
 	@Column(nullable = false)
-	private String item;
+	private String name;
 	
 	
 	// Getters and Setters
@@ -41,12 +41,12 @@ public class Item implements Serializable{
 
 
 	public String getItem() {
-		return item;
+		return name;
 	}
 
 
 	public void setItem(String item) {
-		this.item = item;
+		this.name = item;
 	}
 	
 }

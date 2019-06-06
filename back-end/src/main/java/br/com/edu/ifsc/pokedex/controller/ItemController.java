@@ -45,11 +45,19 @@ public class ItemController {
 	/** Lista o item específico pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
-	@GetMapping("/item/{id}")
+	@GetMapping("/item/{id:[0-9]+}")
 	public Item listItem(@PathVariable(value="id") long id) {
 		return itemRepository.findById(id);
 	}
 	
+	/**
+	 * Lista o item específico pelo nome que está salvo no banco de dados, em
+	 * formato JSON,.
+	 */
+	@GetMapping("/item/{name:[A-Za-z]+[\\sa-zA-Z]+}")
+	public Item listItemName(@PathVariable(value = "name") String name) {
+		return itemRepository.findByName(name);
+	}
 	
 	/** Vai receber através do corpo da requisição o item
 	 * e vai ser salvo no banco de dados.

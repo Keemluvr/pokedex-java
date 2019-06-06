@@ -40,13 +40,25 @@ public class NatureController {
 		return natureRepository.findAll();
 	}
 	
+	
 	/** Lista a natureza específicada pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
-	@GetMapping("/nature/{id}")
+	@GetMapping("/nature/{id:[0-9]+}")
 	public Nature listNature(@PathVariable(value="id") long id) {
 		return natureRepository.findById(id);
 	}
+	
+	
+	/**
+	 * Lista a natureza específica pelo nome que está salvo no banco de dados, em
+	 * formato JSON,.
+	 */
+	@GetMapping("/nature/{name:[A-Za-z]+}")
+	public Nature listNatureName(@PathVariable(value = "name") String name) {
+		return natureRepository.findByName(name);
+	}
+	
 	
 	/** Vai receber através do corpo da requisição a natureza
 	 * e vai ser salvo no banco de dados.

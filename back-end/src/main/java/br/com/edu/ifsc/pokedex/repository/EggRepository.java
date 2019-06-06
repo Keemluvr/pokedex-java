@@ -17,4 +17,7 @@ public interface EggRepository extends JpaRepository<Egg, Long>{
 	
 	/* Método que procura um único ovo pelo seu id. */
 	Egg findById(long id);
+
+	/** Método que procura um único ovo pelo seu nome. */
+	Egg findByName(String name);
 }

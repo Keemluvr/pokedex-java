@@ -45,9 +45,18 @@ public class EggController {
 	/** Lista o ovo específico pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
-	@GetMapping("/egg/{id}")
+	@GetMapping("/egg/{id:[0-9]+}")
 	public Egg listEgg(@PathVariable(value="id") long id) {
 		return eggRepository.findById(id);
+	}
+	
+	/**
+	 * Lista o egg específico pelo nome que está salvo no banco de dados, em
+	 * formato JSON,.
+	 */
+	@GetMapping("/egg/{name:[A-Za-z]+[\\s]+[0-9]|[A-Za-z]+[-a-zA-Z]+}")
+	public Egg listEggName(@PathVariable(value = "name") String name) {
+		return eggRepository.findByName(name);
 	}
 	
 	
