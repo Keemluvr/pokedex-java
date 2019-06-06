@@ -24,6 +24,7 @@ public class Stat implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
+	@Column(unique=true)
 	private long id;
 	
 	

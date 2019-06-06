@@ -43,7 +43,7 @@ public class PokemonController {
 
 	/**
 	 * Lista o pokemon específico pelo id que está salvo no banco de dados, em
-	 * formato JSON,.
+	 * formato JSON.
 	 */
 	@GetMapping("/pokemon/{id:[0-9]+}")
 	public Pokemon listPokemonId(@PathVariable(value = "id") long id) {
@@ -56,7 +56,7 @@ public class PokemonController {
 	 */
 	@GetMapping("/pokemon/{name:[a-zA-Z]+}")
 	public Pokemon listPokemonName(@PathVariable(value = "name") String name) {
-		return pokemonRepository.findByName(name);
+		return pokemonRepository.findByName(name.toLowerCase());
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class PokemonController {
 
 	/**
 	 * Irá deletar um pokemon em uma determinada posição conhecida como id. Irá
-	 * receber como parâmetro o pokemon a ser deletado em formato JSON, no corpo da
+	 * receber como parâmetro o id do pokemon a ser deletado, no corpo da
 	 * requisição.
 	 */
 	@DeleteMapping("/pokemon/{id}")

@@ -15,7 +15,7 @@ import br.com.edu.ifsc.pokedex.models.Nature;
 
 public interface NatureRepository extends JpaRepository<Nature, Long>{
 	
-	/* Método que procura uma única Nature pelo seu id. */
+	/* Método que procura uma única nature pelo seu id. */
 	Nature findById(long id);
 
 	/** Método que procura uma única nature pelo seu nome. */

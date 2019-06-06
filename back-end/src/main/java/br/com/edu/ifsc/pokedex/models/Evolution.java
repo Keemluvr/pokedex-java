@@ -9,10 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+/** Classe que vai modelar a evolução do pokémon
+ * 
+ * @see 
+ * @see 
+ * 
+ * @Author	Keila Fernandes
+ */
 @Entity
-@Table(name="item")
-public class Item implements Serializable{
+@Table(name="evolution")
+public class Evolution implements Serializable{
 
 	// Para manter a compatibilidade com as versões dessa classe 
 	private static final long serialVersionUID = 1L;
@@ -22,32 +28,36 @@ public class Item implements Serializable{
 	@Column(unique=true)
 	private long id;
 	
+	// Métodos
 	
-	/** Nome do item
-	 */
-	@Column(nullable = false)
-	private String name;
-	
-	
-	// Getters and Setters
-
-	public long getId() {
-		return id;
-	}
-
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
-	public String getItem() {
-		return name;
-	}
-
-
-	public void setItem(String item) {
-		this.name = item;
+	/** */
+	public int evolutionByLevel() {
+		return 0;
 	}
 	
+	/** */
+	public int evolutionByStones() {
+		return 0;
+	}
+	
+	/** */
+	public int evolutionByTrading() {
+		return 0;
+	}
+	
+	/** */
+	public int evolutionByFriendship() {
+		return 0;
+	}
+	
+	/** */
+	public int evolutionByOtherCondition() {
+		return 0;
+	}
+	
+	/** */
+	public int notEvolution() {
+		return 0;
+	}
+
 }

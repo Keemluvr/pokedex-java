@@ -56,7 +56,7 @@ public class EggController {
 	 */
 	@GetMapping("/egg/{name:[A-Za-z]+[\\s]+[0-9]|[A-Za-z]+[-a-zA-Z]+}")
 	public Egg listEggName(@PathVariable(value = "name") String name) {
-		return eggRepository.findByName(name);
+		return eggRepository.findByName(name.toLowerCase());
 	}
 	
 	

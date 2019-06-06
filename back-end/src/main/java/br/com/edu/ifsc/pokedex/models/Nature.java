@@ -27,6 +27,7 @@ public class Nature implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id
+	@Column(unique=true)
 	private long id;
 	
 	/**
@@ -35,31 +36,47 @@ public class Nature implements Serializable {
 	@Column(nullable = false)
 	private String name;
 	
-	
-	
-	// Métodos
+	/**
+	 * Nome do atributo do pokémon, que irá sem incrementado em 10%
+	 * 
+	 * Ex: attack
+	 */
+	@Column(nullable = false)
+	private String attributeIncrease;
 	
 	/**
-	 * O método increase tem como objetivo aumentar alguma característica
-	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
-	 * velocidade de defesa e velocidade do Pokemon.
+	 * Nome do atributo do pokémon, que irá sem decrementado em 10%
 	 * 
-	 * @param
+	 * Ex: defense
 	 */
-	public void increase(Stat stat) {
-		
-	}
+	@Column(nullable = false)
+	private String attributeDecrease;
 	
-	/**
-	 * O método decrease tem como objetivo diminuir alguma característica
-	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
-	 * velocidade de defesa e velocidade do Pokemon.
-	 * 
-	 * @param
-	 */
-	public void decrease(Stat stat) {
-			
-	}
+	
+//	
+//	// Métodos
+//	
+//	/**
+//	 * O método increase tem como objetivo aumentar alguma característica
+//	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
+//	 * velocidade de defesa e velocidade do Pokemon.
+//	 * 
+//	 * @param
+//	 */
+//	public void increase(String attributeIncrease) {
+//		
+//	}
+//	
+//	/**
+//	 * O método decrease tem como objetivo diminuir alguma característica
+//	 * do stats do Pokemon, como o ataque, a defesa, a velocidade de ataque,
+//	 * velocidade de defesa e velocidade do Pokemon.
+//	 * 
+//	 * @param
+//	 */
+//	public void decrease(String attributeDecrease) {
+//			
+//	}
 	
 	
 	// Getters and Setters
@@ -79,5 +96,23 @@ public class Nature implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getAttributeIncrease() {
+		return attributeIncrease;
+	}
+
+	public void setAttributeIncrease(String attributeIncrease) {
+		this.attributeIncrease = attributeIncrease;
+	}
+
+	public String getAttributeDecrease() {
+		return attributeDecrease;
+	}
+
+	public void setAttributeDecrease(String attributeDecrease) {
+		this.attributeDecrease = attributeDecrease;
+	}
+	
+	
 
 }

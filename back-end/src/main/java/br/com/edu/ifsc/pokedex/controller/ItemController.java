@@ -20,7 +20,6 @@ import br.com.edu.ifsc.pokedex.repository.ItemRepository;
  * @Author	Keila Fernandes
  * @Author	Cesar Henrique
  */
-
 @RestController
 @RequestMapping(value="/api") //URI padrão para a API  
 public class ItemController {
@@ -56,7 +55,7 @@ public class ItemController {
 	 */
 	@GetMapping("/item/{name:[A-Za-z]+[\\sa-zA-Z]+}")
 	public Item listItemName(@PathVariable(value = "name") String name) {
-		return itemRepository.findByName(name);
+		return itemRepository.findByName(name.toLowerCase());
 	}
 	
 	/** Vai receber através do corpo da requisição o item

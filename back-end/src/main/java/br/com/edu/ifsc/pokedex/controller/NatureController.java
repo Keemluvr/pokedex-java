@@ -56,7 +56,7 @@ public class NatureController {
 	 */
 	@GetMapping("/nature/{name:[A-Za-z]+}")
 	public Nature listNatureName(@PathVariable(value = "name") String name) {
-		return natureRepository.findByName(name);
+		return natureRepository.findByName(name.toLowerCase());
 	}
 	
 	
