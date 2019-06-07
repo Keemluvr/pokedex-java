@@ -1,12 +1,16 @@
 package br.com.edu.ifsc.pokedex.models;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -14,7 +18,7 @@ import javax.persistence.Table;
 @Table(name="item")
 public class Item implements Serializable{
 
-	// Para manter a compatibilidade com as versões dessa classe 
+	// Para manter a coevolutionpatibilidade com as versões dessa classe 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -28,6 +32,13 @@ public class Item implements Serializable{
 	@Column(nullable = false)
 	private String name;
 	
+	/** Lista de evoluções em que se usa esse item 
+	 */
+	
+	
+	@OneToMany( targetEntity = Evolution.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@Column
+	private List<Evolution> evolutionUseThisItem;
 	
 	// Getters and Setters
 

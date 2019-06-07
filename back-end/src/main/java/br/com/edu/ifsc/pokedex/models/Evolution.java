@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /** Classe que vai modelar a evolução do pokémon
@@ -28,36 +30,108 @@ public class Evolution implements Serializable{
 	@Column(unique=true)
 	private long id;
 	
-	// Métodos
+	/** Evolução anterior
+	 */
+	@Column
+	private Evolution priorEvolution;
 	
-	/** */
-	public int evolutionByLevel() {
-		return 0;
+	/** Próxima evolução
+	 */
+	@Column
+	private Evolution nextEvolution;
+	
+	@Column
+	private int evolutionByLevel;
+	
+	@ManyToOne
+	@JoinColumn(name="evolutionByStones")
+	private Item evolutionByStones;
+	
+	/** Por troca
+	 * */
+	@Column 
+	private Item evolutionByTrading;
+	
+	/** Por amizade
+	 * */
+	@Column
+	private boolean evolutionByFriendship;
+	
+	@Column 
+	private String evolutionByOtherCondition;
+	
+	@Column
+	private boolean notEvolution;
+	
+	
+	// Getters and Setters
+
+	
+
+	public int getEvolutionByLevel() {
+		return evolutionByLevel;
+	}
+
+	public Evolution getPriorEvolution() {
+		return priorEvolution;
+	}
+
+	public void setPriorEvolution(Evolution priorEvolution1) {
+		this.priorEvolution = priorEvolution1;
+	}
+
+	public Evolution getNextEvolution() {
+		return nextEvolution;
+	}
+
+	public void setNextEvolution(Evolution nextEvolution) {
+		this.nextEvolution = nextEvolution;
+	}
+
+	public void setEvolutionByLevel(int evolutionByLevel) {
+		this.evolutionByLevel = evolutionByLevel;
+	}
+
+	public Item getEvolutionByStones() {
+		return evolutionByStones;
+	}
+
+	public void setEvolutionByStones(Item evolutionByStones) {
+		this.evolutionByStones = evolutionByStones;
+	}
+
+	public Item isEvolutionByTrading() {
+		return evolutionByTrading;
+	}
+
+	public void setEvolutionByTrading(Item evolutionByTrading) {
+		this.evolutionByTrading = evolutionByTrading;
+	}
+
+	public boolean isEvolutionByFriendship() {
+		return evolutionByFriendship;
+	}
+
+	public void setEvolutionByFriendship(boolean evolutionByFriendship) {
+		this.evolutionByFriendship = evolutionByFriendship;
+	}
+
+	public String getEvolutionByOtherCondition() {
+		return evolutionByOtherCondition;
+	}
+
+	public void setEvolutionByOtherCondition(String evolutionByOtherCondition) {
+		this.evolutionByOtherCondition = evolutionByOtherCondition;
+	}
+
+	public boolean isNotEvolution() {
+		return notEvolution;
+	}
+
+	public void setNotEvolution(boolean notEvolution) {
+		this.notEvolution = notEvolution;
 	}
 	
-	/** */
-	public int evolutionByStones() {
-		return 0;
-	}
 	
-	/** */
-	public int evolutionByTrading() {
-		return 0;
-	}
-	
-	/** */
-	public int evolutionByFriendship() {
-		return 0;
-	}
-	
-	/** */
-	public int evolutionByOtherCondition() {
-		return 0;
-	}
-	
-	/** */
-	public int notEvolution() {
-		return 0;
-	}
 
 }
