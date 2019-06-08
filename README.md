@@ -17,8 +17,8 @@
 
 ## Endpoints
 >- Pokemon
->    - GET Lista todos os Pokemons SEM LINK AINDA
+>    - GET Lista todos os [Pokemons](https://api-pokedex-lab.herokuapp.com/api/pokemon)
 >- Egg
->    - GET Lista todos os Eggs SEM LINK AINDA
+>    - GET Lista todos os [Eggs](https://api-pokedex-lab.herokuapp.com/api/egg)
 >- Nature
->    - GET Lista todas as Natures SEM LINK AINDA
+>    - GET Lista todas as [Natures](https://api-pokedex-lab.herokuapp.com/api/nature)
