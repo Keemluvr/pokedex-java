@@ -82,9 +82,9 @@ public class PokemonController {
 	 * Irá atualizar as informações de um pokemon através das informações recebidas
 	 * do RequestBody em formato JSON.
 	 */
-	@PutMapping("/pokemon")
-	public Pokemon updatePokemon(@RequestBody Pokemon pokemon) {
-		return pokemonRepository.save(pokemon);
+	@PutMapping("/pokemon/{id}")
+	public Pokemon updatePokemon(@RequestBody Pokemon newPokemon, @PathVariable(value="id") long id) {
+		return pokemonRepository.save(newPokemon);
 	}
 
 }

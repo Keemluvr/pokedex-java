@@ -83,8 +83,8 @@ public class NatureController {
 	/** Irá atualizar as informações de uma nature através das
 	 * informações recebidas do RequestBody em formato JSON.
 	 */
-	@PutMapping("/nature")
-	public Nature updateNature(@RequestBody Nature nature) {
-		return natureRepository.save(nature);
+	@PutMapping("/nature/{id}")
+	public Nature updateNature(@RequestBody Nature newNature, @PathVariable(value="id") long id) {
+		return natureRepository.save(newNature);
 	}
 }

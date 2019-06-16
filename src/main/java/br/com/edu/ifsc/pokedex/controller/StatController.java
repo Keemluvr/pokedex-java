@@ -73,8 +73,8 @@ public class StatController {
 	/** Irá atualizar as informações de uma nature através das
 	 * informações recebidas do RequestBody em formato JSON.
 	 */
-	@PutMapping("/stat")
-	public Stat updateNature(@RequestBody Stat stat) {
-		return statRepository.save(stat);
+	@PutMapping("/stat/{id}")
+	public Stat updateNature(@RequestBody Stat newStat, @PathVariable(value="id") long id) {
+		return statRepository.save(newStat);
 	}
 }

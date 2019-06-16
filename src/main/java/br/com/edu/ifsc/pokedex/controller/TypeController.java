@@ -94,8 +94,8 @@ public class TypeController {
 	 * Irá atualizar as informações de um tipo através das informações recebidas
 	 * do RequestBody em formato JSON.
 	 */
-	@PutMapping("/type")
-	public Type updateType(@RequestBody Type type) {
-		return typeRepository.save(type);
+	@PutMapping("/type/{id}")
+	public Type updateType(@RequestBody Type newType, @PathVariable(value="id") long id) {
+		return typeRepository.save(newType);
 	}
 }

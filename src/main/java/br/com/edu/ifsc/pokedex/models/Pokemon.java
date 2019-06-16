@@ -12,10 +12,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /** Classe que vai modelar o pokemon
  * 
+ * @see Serializable
  * @see Egg
  * @see Stat
  * 
@@ -29,96 +29,86 @@ public class Pokemon extends Stat implements Serializable{
 	// Para manter a compatibilidade com as versões dessa classe 
 	private static final long serialVersionUID = 1L; 
 	
-	
-	/** Variável que irá guardar o nome do pokemon
-	 */
-	@Column
+	/** Nome do pokémon */
+	@Column(nullable = false)
 	private String name;
 	
-	/** Variável que irá guardar o peso do pokemon
-	 */
-	@Column
+	/** Peso do pokémon */
+	@Column(nullable = false)
 	private double weight;
 	
-	/** Variável que irá guardar a altura do pokemon
-	 */
-	@Column
+	/** Altura do pokemon */
+	@Column(nullable = false)
 	private double height;
 	
-	/** Variável que irá guardar a descrição do pokemon
-	 */
-	@Column
+	/** Descrição do pokémon */
+	@Column(nullable = false)
 	private String description;
 	
-	/** Cada Pokémon é atribuído a um ou mais grupos de ovos.
-	 */
+	/** Lista dos ovos que o pokémon possui */
+	/* Cada Pokémon é atribuído a um ou mais grupos de ovos */
 	@ManyToMany(cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
 	@JoinTable(name = "pokemon_egg")
 	@JoinColumn(name = "pokemon_id")
-	@JsonManagedReference //Resolve o problema que retorna a lista de ovos infinitamente
+	//@JsonBackReference //Resolve o problema que retorna a lista de ovos infinitamente
 	private List<Egg> egg;
 	
 	
-	// Getters and Setters
+	//###########################  Getters and Setters  ###########################
 	
-	/** Retorna o valor do nome do Pokemon
-	 */
+	/** @return  Retorna o do nome do Pokémon */
 	public String getName() {
 		return name;
 	}
 	
-	/** Altera o valor da variável name pelo que foi passado no parametro
-	 */
+	/** Atribui um novm nome para o pokémon 
+	 * @param name - Novo nome do pokémon*/
 	public void setName(String name) {
 		this.name = name;
 	}
 	
-	/** Retorna o valor do weight do Pokemon
-	 */
+	/** @return Retorna o peso do Pokemon */
 	public double getWeight() {
 		return weight;
 	}
 	
-	/** Altera o valor da variável weight pelo que foi passado no parametro
-	 */
+	/** Atribui um novo peso para o pokémon 
+	 * @param weight - Novo peso do pokémon */
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 	
-	/** Retorna o valor do height do Pokemon
-	 */
+	/** @return Retorna a altura do Pokemon */
 	public double getHeight() {
 		return height;
 	}
 	
-	/** Altera o valor da variável height pelo que foi passado no parametro
-	 */
+	/** Atribui uma nova altura para o pokémon
+	 * @param height - Nova altura do pokémon */
 	public void setHeight(double height) {
 		this.height = height;
 	}
 	
-	/** Retorna o valor do description do Pokemon
-	 */
+	/** @return Retorna a descrição do pokémon */
 	public String getDescription() {
 		return description;
 	}
 	
-	/** Altera o valor da variável description pelo que foi passado no parametro
-	 */
+	/** Atribui uma nova descrição para o pokémon
+	 * @param description - Nova descrição do pokémon */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	/** Retorna a lista de eggs do pokemon
-	 * 
-	 * @see Egg
+	/** @return Retorna uma lista de ovos do pokémon
+	 *  @see egg
 	 */
 	public List<Egg> getEgg() {
 		return egg;
 	}
 
-	/** Altera o valor da lista de eggs pelo que foi passado no parametro
-	 * 
+	/** Atribui uma nova lista de ovos para o pokémon
+	 * @param egg - Nova lista de ovos do pokémon
 	 *  @see Egg
 	 */
 	public void setEgg(List<Egg> egg) {

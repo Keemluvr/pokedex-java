@@ -83,9 +83,9 @@ public class EggController {
 	/** Irá atualizar as informações de um ovo através das
 	 * informações recebidas do RequestBody em formato JSON.
 	 */
-	@PutMapping("/egg")
-	public Egg updateEgg(@RequestBody Egg egg) {
-		return eggRepository.save(egg);
+	@PutMapping("/egg/{id}")
+	public Egg updateEgg(@RequestBody Egg newEgg, @PathVariable(value="id") long id) {
+		return eggRepository.save(newEgg);
 	}
 	
 

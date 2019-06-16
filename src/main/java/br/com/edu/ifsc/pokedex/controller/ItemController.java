@@ -81,9 +81,9 @@ public class ItemController {
 	/** Irá atualizar as informações de um ovo através das
 	 * informações recebidas do RequestBody em formato JSON.
 	 */
-	@PutMapping("/item")
-	public Item updateItem(@RequestBody Item item) {
-		return itemRepository.save(item);
+	@PutMapping("/item/{id}")
+	public Item updateItem(@RequestBody Item newItem, @PathVariable(value="id") long id) {
+		return itemRepository.save(newItem);
 	}
 	
 	
