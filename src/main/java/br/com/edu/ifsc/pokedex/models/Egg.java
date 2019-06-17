@@ -21,7 +21,7 @@ import javax.persistence.Table;
  * @see Serializable
  * @see Pokemon
  * 
- * @Author	Keila Fernandes
+ * @author	Keila Fernandes
  */
 @Entity
 @Table(name="egg")

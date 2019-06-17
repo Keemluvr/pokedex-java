@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @see Pokemon
  * @see Item
  * 
- * @Author	Keila Fernandes
+ * @author	Keila Fernandes
  */
 @Entity
 @Table(name="evolution")

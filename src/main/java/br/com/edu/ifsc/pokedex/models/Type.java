@@ -23,9 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Existem 18 tipos oficiais totais de Pokémon.
  * 
  * @see Serializable
- * @see Type
  * 
- * @Author Keila Fernandes
+ * @author Keila Fernandes
  */
 @Entity
 @Table(name = "type")
@@ -48,7 +47,7 @@ public class Type implements Serializable {
 	 * se está sendo referenciado. Um tipo recebe dano duplo de vários tipos e
 	 * vários tipos podem receber dano de vários outros tipos. 
 	 * 
-	 * @see type
+	 * @see Type
 	 */
 	// Sendo assim, cria-se uma tabela para relacioná-los.
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -64,7 +63,7 @@ public class Type implements Serializable {
 	 * se está sendo referenciado. Um tipo recebe dano duplo de vários tipos e
 	 * vários tipos podem receber dano de vários outros tipos. 
 	 * 
-	 * @see type
+	 * @see Type
 	 */
 	// Sendo assim, cria-se uma tabela para relacioná-los.
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -81,7 +80,7 @@ public class Type implements Serializable {
 	 * se está sendo referenciado. Um tipo recebe dano duplo de vários tipos e
 	 * vários tipos podem receber dano de vários outros tipos.
 	 * 
-	 * @see type
+	 * @see Type
 	 */
 	// Sendo assim, cria-se uma tabela para relacioná-los.
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -98,7 +97,7 @@ public class Type implements Serializable {
 	 * se está sendo referenciado. Um tipo recebe dano duplo de vários tipos e
 	 * vários tipos podem receber dano de vários outros tipos.
 	 * 
-	 * @see type
+	 * @see Type
 	 */
 	// Sendo assim, cria-se uma tabela para relacioná-los.
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -116,7 +115,7 @@ public class Type implements Serializable {
 	 * vários tipos podem receber dano de vários outros tipos. Sendo assim, cria-se
 	 * uma tabela para relacioná-los.
 	 * 
-	 * @see type
+	 * @see Type
 	 */
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "id")
@@ -132,7 +131,7 @@ public class Type implements Serializable {
 	 * se está sendo referenciado. Um tipo recebe dano duplo de vários tipos e
 	 * vários tipos podem receber dano de vários outros tipos.
 	 * 
-	 * @see type
+	 * @see Type
 	 */
 	// Sendo assim, cria-se uma tabela para relacioná-los.
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -184,7 +183,7 @@ public class Type implements Serializable {
 	}
 
 	/** Atribui uma nova lista com os tipos que essa tipagem da 1/2 de dano
-	 * @param haldDamageFrom - Nova lista de tipos que essa tipagem dá 1/2 de dano */
+	 * @param halfDamageFrom - Nova lista de tipos que essa tipagem dá 1/2 de dano */
 	public void setHalfDamageFrom(List<Type> halfDamageFrom) {
 		this.halfDamageFrom = halfDamageFrom;
 	}

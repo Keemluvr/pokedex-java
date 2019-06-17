@@ -19,8 +19,8 @@ import javax.persistence.Table;
  * @see Egg
  * @see Stat
  * 
- * @Author	Keila Fernandes
- * @Author	Cesar Henrique
+ * @author	Keila Fernandes
+ * @author	Cesar Henrique
  */
 @Entity
 @Table(name="pokemon")

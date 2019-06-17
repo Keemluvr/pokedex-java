@@ -14,5 +14,7 @@ import br.com.edu.ifsc.pokedex.models.Evolution;
 * @see Evolution
 */
 public interface EvolutionRepository  extends JpaRepository<Evolution, Long>{
-
+	
+	/* Método que procura uma única evolução pelo seu id. */
+	Evolution findById(long id);
 }

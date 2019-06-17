@@ -13,7 +13,7 @@ import javax.persistence.MappedSuperclass;
  * @see Pokemon
  * @see Serializable
  * 
- * @Author Keila Fernandes
+ * @author Keila Fernandes
  */
 @MappedSuperclass //Define uma super classe mapeada. A super classe mapeada não é uma classe de persistência, porém permite o mapeamento de atributos comuns para subclasses
 public class Stat implements Serializable {
@@ -39,11 +39,11 @@ public class Stat implements Serializable {
 
 	/** Ataque especial do pokémon */
 	@Column(nullable = false)
-	private int specialAttack;
+	private int speedAttack;
 
 	/** Ataque de defesa do pokémon */
 	@Column(nullable = false)
-	private int specialDefense;
+	private int speedDefense;
 
 	/** Velocidade do pokémon */
 	@Column(nullable = false)
@@ -85,26 +85,26 @@ public class Stat implements Serializable {
 		this.defense = defense;
 	}
 
-	/** @return Rrtorna o ataque especial que o pokémon possui */
-	public int getSpecialAttack() {
-		return specialAttack;
+	/** @return Retorna a velocidade de ataque que o pokémon possui */
+	public int getSpeedAttack() {
+		return speedAttack;
 	}
 
-	/** Atribui um novo ataque especial que o pokémon possui
-	 * @param specialAttack - Novo ataque especial */
-	public void setSpecialAttack(int specialAttack) {
-		this.specialAttack = specialAttack;
+	/** Atribui uma nova velocidade de ataque que o pokémon possui
+	 * @param speedAttack - Nova velocidade de ataque */
+	public void setSpeedAttack(int speedAttack) {
+		this.speedAttack = speedAttack;
 	}
 
-	/** @return Retorna a defesa especial do pokémon */
-	public int getSpecialDefense() {
-		return specialDefense;
+	/** @return Retorna a velocidade de defesa do pokémon */
+	public int getSpeedDefense() {
+		return speedDefense;
 	}
 
-	/** Atribui um novo tipo de defesa especial do pokémon 
-	 * @param specialDefense - Novo tipo de defesa especial */
-	public void setSpecialDefense(int specialDefense) {
-		this.specialDefense = specialDefense;
+	/** Atribui uma nova velocidade de defesa do pokémon 
+	 * @param speedDefense - Nova velocidade de ataque */
+	public void setSpeedDefense(int speedDefense) {
+		this.speedDefense = speedDefense;
 	}
 
 	/** @return Retorna a velocidade do pokémon */

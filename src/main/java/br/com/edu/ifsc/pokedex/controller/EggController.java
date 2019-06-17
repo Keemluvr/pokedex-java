@@ -3,6 +3,7 @@ package br.com.edu.ifsc.pokedex.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,13 +21,12 @@ import br.com.edu.ifsc.pokedex.repository.EggRepository;
  * @Author	Keila Fernandes
  * @Author	Cesar Henrique
  */
-
 @RestController
 @RequestMapping(value="/api") //URI padrão para a API  
 public class EggController {
 	
 	/** Ponto de injeção
-	 * Para poder utilizar aos métodos para se conectar 
+	 * para poder utilizar aos métodos para se conectar 
 	 * ao banco de dados.
 	 */
 	@Autowired
@@ -36,6 +36,7 @@ public class EggController {
 	/** Lista todos os ovos salvos no banco de dados
 	 * em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/egg")
 	public List<Egg> listEggs() {
 		return eggRepository.findAll();
@@ -45,6 +46,7 @@ public class EggController {
 	/** Lista o ovo específico pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/egg/{id:[0-9]+}")
 	public Egg listEgg(@PathVariable(value="id") long id) {
 		return eggRepository.findById(id);
@@ -54,6 +56,7 @@ public class EggController {
 	 * Lista o egg específico pelo nome que está salvo no banco de dados, em
 	 * formato JSON,.
 	 */
+	@CrossOrigin
 	@GetMapping("/egg/{name:[A-Za-z]+[\\s]+[0-9]|[A-Za-z]+[-a-zA-Z]+}")
 	public Egg listEggName(@PathVariable(value = "name") String name) {
 		return eggRepository.findByName(name.toLowerCase());
