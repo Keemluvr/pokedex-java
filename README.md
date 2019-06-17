@@ -3,17 +3,18 @@
 ## Modelagem
 [Diagrama de Classe](https://drive.google.com/file/d/1pfrkeNyMYFFTjgomh8PnpMPsLm-1Slgl/view?usp=sharing)
 
-## Populando BD
-[Arquivo](https://docs.google.com/document/d/1_JEKNq-yKCWEPQsp10XgAg7EgRsrQ_uxTk6--QBi034/edit?usp=sharing)
+## Front-end
+[Pokédex](https://keemluvr.github.io/pokedex-page/)
+
+## Repositório do front-end
+[Pokédex](https://github.com/Keemluvr/pokedex-page)
 
 ## Tecnologias usadas
 >Back-end
 >- Spring
 >   - Spring Boot
+>- Heroku
 >- PostgreSQL
-
->Front-end
->- Materialize
 
 ## Endpoints
 >- Pokemon
