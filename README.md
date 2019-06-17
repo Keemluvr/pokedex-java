@@ -16,6 +16,9 @@
 >- Heroku
 >- PostgreSQL
 
+>Front-end
+>- [pokédex](https://github.com/Keemluvr/pokedex-page)
+
 ## Endpoints
 >- Pokemon
 >    - GET Lista todos os [Pokemons](https://api-pokedex-lab.herokuapp.com/api/pokemon)
