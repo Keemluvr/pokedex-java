@@ -1,7 +1,7 @@
 # pokedex
 
 ## Modelagem
-[Diagrama de Classe](https://drive.google.com/file/d/1pfrkeNyMYFFTjgomh8PnpMPsLm-1Slgl/view?usp=sharing)
+[Diagrama de Classe](https://drive.google.com/file/d/1jrDO1ZStRMF0ks57hyIO0sbEGQTtkYsD/view?usp=sharing)
 
 ## Front-end
 [Pokédex](https://keemluvr.github.io/pokedex-page/)
