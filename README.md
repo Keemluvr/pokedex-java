@@ -1,4 +1,9 @@
-# pokedex
+<h1 align="center">
+  Pokédex
+</h1>
+<p align="center">
+  <img src="https://keemluvr.github.io/pokedex-page/assets/icon/ball.svg" width="150">
+</p>
 
 ## Modelagem
 [Diagrama de Classe](https://drive.google.com/file/d/1jrDO1ZStRMF0ks57hyIO0sbEGQTtkYsD/view?usp=sharing)
