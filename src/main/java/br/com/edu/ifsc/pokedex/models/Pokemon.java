@@ -47,7 +47,7 @@ public class Pokemon extends Stat implements Serializable{
 	
 	/** Lista dos ovos que o pokémon possui */
 	/* Cada Pokémon é atribuído a um ou mais grupos de ovos */
-	@ManyToMany(cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "pokemon_egg")
 	@JoinColumn(name = "pokemon_id")
 	//@JsonBackReference //Resolve o problema que retorna a lista de ovos infinitamente
