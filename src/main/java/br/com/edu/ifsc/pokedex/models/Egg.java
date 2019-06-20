@@ -14,6 +14,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /** Classe que vai modelar o ovo do pokémon.
  * Cada Pokémon é atribuído a um ou mais grupos de ovos, e somente os Pokémon 
  * nos mesmos grupos de ovos podem reproduzir.
@@ -45,6 +49,7 @@ public class Egg implements Serializable{
 	@ManyToMany(fetch = FetchType.LAZY) // Não é o lado dominante da relação
 	@JoinTable(name = "pokemon_egg")
 	@JoinColumn(name = "egg_id")
+	@JsonIgnoreProperties({"egg"})
 	//@JsonManagedReference //Resolve o problema que retorna a lista de ovos infinitamente
 	private List<Pokemon> pokemon;
 

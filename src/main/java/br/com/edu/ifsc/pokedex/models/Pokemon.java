@@ -12,6 +12,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 /** Classe que vai modelar o pokemon
  * 
@@ -50,6 +54,7 @@ public class Pokemon extends Stat implements Serializable{
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "pokemon_egg")
 	@JoinColumn(name = "pokemon_id")
+	@JsonIgnoreProperties({"pokemon"})
 	//@JsonBackReference //Resolve o problema que retorna a lista de ovos infinitamente
 	private List<Egg> egg;
 	
