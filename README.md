@@ -8,7 +8,7 @@
 ## Modelagem
 [Diagrama de Classe](https://drive.google.com/file/d/1jrDO1ZStRMF0ks57hyIO0sbEGQTtkYsD/view?usp=sharing)
 
-## Front-end
+## Front-end (Github pages)
 [Pokédex](https://keemluvr.github.io/pokedex-page/)
 
 ## Repositório do front-end
