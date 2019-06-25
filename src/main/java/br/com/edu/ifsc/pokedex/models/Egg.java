@@ -14,9 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /** Classe que vai modelar o ovo do pokémon.
  * Cada Pokémon é atribuído a um ou mais grupos de ovos, e somente os Pokémon 
@@ -32,8 +30,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Egg implements Serializable{
 
 	// Para manter a compatibilidade com as versões dessa classe 
-	private static final long serialVersionUID = 1L; 
-	
+	private static final long serialVersionUID = 6007947074860444326L;
+
 	/** Id que irá identificar o ovo, sendo que ele será único */
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) //Cria automaticamente o id

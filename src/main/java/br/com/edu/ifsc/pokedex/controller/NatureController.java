@@ -3,6 +3,7 @@ package br.com.edu.ifsc.pokedex.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,7 @@ public class NatureController {
 	/** Lista todos as naturezas salvas no banco de dados
 	 * em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/nature")
 	public List<Nature> listNatures() {
 		return natureRepository.findAll();
@@ -44,6 +46,7 @@ public class NatureController {
 	/** Lista a natureza específicada pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/nature/{id:[0-9]+}")
 	public Nature listNature(@PathVariable(value="id") long id) {
 		return natureRepository.findById(id);
@@ -54,6 +57,7 @@ public class NatureController {
 	 * Lista a natureza específica pelo nome que está salvo no banco de dados, em
 	 * formato JSON,.
 	 */
+	@CrossOrigin
 	@GetMapping("/nature/{name:[A-Za-z]+}")
 	public Nature listNatureName(@PathVariable(value = "name") String name) {
 		return natureRepository.findByName(name.toLowerCase());

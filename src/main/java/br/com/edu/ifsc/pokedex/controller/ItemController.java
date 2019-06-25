@@ -3,6 +3,7 @@ package br.com.edu.ifsc.pokedex.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,7 @@ public class ItemController {
 	/** Lista todos os itens salvos no banco de dados
 	 * em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/item")
 	public List<Item> listItems() {
 		return itemRepository.findAll();
@@ -44,6 +46,7 @@ public class ItemController {
 	/** Lista o item específico pelo id que está salvo 
 	 * no banco de dados, em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/item/{id:[0-9]+}")
 	public Item listItem(@PathVariable(value="id") long id) {
 		return itemRepository.findById(id);
@@ -53,6 +56,7 @@ public class ItemController {
 	 * Lista o item específico pelo nome que está salvo no banco de dados, em
 	 * formato JSON,.
 	 */
+	@CrossOrigin
 	@GetMapping("/item/{name:[A-Za-z]+[\\sa-zA-Z]+}")
 	public Item listItemName(@PathVariable(value = "name") String name) {
 		return itemRepository.findByName(name.toLowerCase());

@@ -19,8 +19,9 @@ import javax.persistence.MappedSuperclass;
 public class Stat implements Serializable {
 
 	// Para manter a compatibilidade com as versões dessa classe
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8234208394527267827L;
 
+	
 	/** Id que irá identificar o ovo, sendo que ele será único.
 	 * Esse id também será o id do pokémon, pois pokémon herda esses status. */
 	@Id

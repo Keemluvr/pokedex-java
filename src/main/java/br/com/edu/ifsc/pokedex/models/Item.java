@@ -37,7 +37,6 @@ public class Item implements Serializable{
 	@Column(unique=true)
 	private long id;
 	
-	
 	/** Nome do item */
 	@Column(nullable = false)
 	private String name;

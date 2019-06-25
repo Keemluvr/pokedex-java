@@ -3,6 +3,7 @@ package br.com.edu.ifsc.pokedex.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +37,7 @@ public class PokemonController {
 	/**
 	 * Lista todos os pokemons salvos no banco de dados em formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/pokemon")
 	public List<Pokemon> listPokemons() {
 		return pokemonRepository.findAll();
@@ -45,6 +47,7 @@ public class PokemonController {
 	 * Lista o pokemon específico pelo id que está salvo no banco de dados, em
 	 * formato JSON.
 	 */
+	@CrossOrigin
 	@GetMapping("/pokemon/{id:[0-9]+}")
 	public Pokemon listPokemonId(@PathVariable(value = "id") long id) {
 		return pokemonRepository.findById(id);
@@ -54,6 +57,7 @@ public class PokemonController {
 	 * Lista o pokemon específico pelo nome que está salvo no banco de dados, em
 	 * formato JSON,.
 	 */
+	@CrossOrigin
 	@GetMapping("/pokemon/{name:[a-zA-Z]+}")
 	public Pokemon listPokemonName(@PathVariable(value = "name") String name) {
 		return pokemonRepository.findByName(name.toLowerCase());
