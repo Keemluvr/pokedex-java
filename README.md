@@ -10,6 +10,7 @@
 
 ## Front-end (Github pages)
 [Pokédex](https://keemluvr.github.io/pokedex-page/)
+Obs: Atualize a página após abrir
 
 ## Repositório do front-end
 [Pokédex](https://github.com/Keemluvr/pokedex-page)
