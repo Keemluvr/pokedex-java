@@ -9,7 +9,7 @@
 [Diagrama de Classe](https://drive.google.com/file/d/1jrDO1ZStRMF0ks57hyIO0sbEGQTtkYsD/view?usp=sharing)
 
 ## Front-end (Github pages)
-[Pokédex](https://keemluvr.github.io/pokedex-page/)
+[Pokédex](https://keemluvr.github.io/pokedex-page/)  
 Obs: Atualize a página após abrir
 
 ## Repositório do front-end
