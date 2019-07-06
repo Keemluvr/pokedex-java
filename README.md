@@ -8,13 +8,6 @@
 ## Modelagem
 [Diagrama de Classe](https://drive.google.com/file/d/1jrDO1ZStRMF0ks57hyIO0sbEGQTtkYsD/view?usp=sharing)
 
-## Front-end (Github pages)
-[Pokédex](https://keemluvr.github.io/pokedex-page/)  
-Obs: Atualize a página após abrir
-
-## Repositório do front-end
-[Pokédex](https://github.com/Keemluvr/pokedex-page)
-
 ## Tecnologias usadas
 >Back-end
 >- Spring
@@ -32,3 +25,12 @@ Obs: Atualize a página após abrir
 >    - GET Lista todos os [Eggs](https://api-pokedex-lab.herokuapp.com/api/egg)
 >- Nature
 >    - GET Lista todas as [Natures](https://api-pokedex-lab.herokuapp.com/api/nature)
+
+## Front-end (Github pages)
+[Pokédex](https://keemluvr.github.io/pokedex-page/) 
+
+## Repositório do front-end
+[Pokédex](https://github.com/Keemluvr/pokedex-page)
+
+
+
